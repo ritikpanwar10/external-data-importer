@@ -122,80 +122,39 @@ Used for extracting direct, filtered views from enterprise database servers with
 
 ## 4. Consolidate Multiple Files from a Folder
 
-Used for combining identical periodic files (e.g., `Jan_Sales.xlsx`, `Feb_Sales.xlsx`, `Mar_Sales.xlsx`) into a single master dataset automatically.
+Used for combining identical periodic files (e.g., `Jan_Sales.xlsx`, `Feb_Sales.xlsx`, `Mar_Sales.xlsx`,`Apr_sales.xlsx`) into a single master dataset automatically.
 
 ### Step-by-Step Instructions:
 
 1. Place all source files with identical schema into a dedicated folder:
-```text
-C:\DataProjects\MonthlySales\
-
-```
-
+<img width="661" height="345" alt="Screenshot 2026-09-29 154354" src="https://github.com/user-attachments/assets/2ef0c813-f3f8-4653-813f-681113e833b0" />
 
 2. In Excel: **Data** > **Get Data** > **From File** > **From Folder**.
+<img width="817" height="571" alt="1" src="https://github.com/user-attachments/assets/14483acd-a2b0-478f-a364-bd2b1e159ce0" />
+
 3. Select the folder path and click **Open**.
+
+<img width="928" height="583" alt="2" src="https://github.com/user-attachments/assets/3446a35a-13c2-4f6e-974e-77bb72be047d" />
+
+ 
 4. In the preview window, select **Combine** > **Combine & Transform Data**.
-5. Choose the sample sheet (e.g., `Sheet1`) as the template for all files.
-6. Click **OK**.
-7. In the Power Query editor, remove the auto-generated `Source.Name` column if not needed, then click **Close & Load**.
+
+<img width="1095" height="857" alt="3" src="https://github.com/user-attachments/assets/1aad57af-a2cf-4fce-9585-23fac7a61cd4" />
+
+   
+7. Choose the sample sheet (e.g., `Sheet1`) as the template for all files.
+
+<img width="1091" height="867" alt="4" src="https://github.com/user-attachments/assets/c977bc6d-179d-49a1-b20d-81c20232dea5" />
+
+   
+9. Click **OK**.
+10. In the Power Query editor, remove the auto-generated `Source.Name` column if not needed, then click **Close & Load**.
+
+<img width="1933" height="932" alt="5" src="https://github.com/user-attachments/assets/99e27523-6a74-40ce-b692-412b9802ff53" />
+
 
 ### Automation Benefit:
 
 * Adding `Apr_Sales.xlsx` to the folder requires zero manual copy-pasting.
 * Clicking **Data** > **Refresh All** appends the new file's rows into the master table automatically.
 
----
-
-## 5. Live Web API Data Using Native Formulas (`WEBSERVICE` + `FILTERXML`)
-
-Used for pulling single-cell live data points (such as currency rates, weather, or inventory counts) via REST APIs directly inside formulas without opening Power Query.
-
-### Functions:
-
-* `=WEBSERVICE(url)`: Fetches raw text, JSON, or XML data from a web endpoint.
-* `=FILTERXML(xml, xpath)`: Parses an XML string and returns the target node using an XPath query.
-
-### Implementation Example:
-
-Cell `A1` contains the API endpoint:
-
-```text
-[https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?date=2024](https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?date=2024)
-
-```
-
-Cell `B1` formula to extract the indicator value:
-
-```excel
-=FILTERXML(WEBSERVICE(A1), "//wb:value")
-
-```
-
-### Result:
-
-The cell immediately evaluates to the numerical value returned by the endpoint.
-
-```
-
----
-
-**Recommended Repository Structure**
-
-```text
-excel-external-data-connectors/
-│
-├── README.md
-├── sample-data/
-│   ├── sample_orders.csv
-│   └── monthly-reports/
-│       ├── Jan_Sales.xlsx
-│       └── Feb_Sales.xlsx
-├── sql-scripts/
-│   └── query_extract_orders.sql
-└── workbooks/
-    ├── CSV_Import_Demo.xlsx
-    ├── Folder_Consolidation_Demo.xlsx
-    └── Web_Scraping_Demo.xlsx
-
-```
