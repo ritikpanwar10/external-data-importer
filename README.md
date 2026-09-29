@@ -89,30 +89,34 @@ Used for scraping HTML tables from websites, such as live exchange rates, commod
 
 Used for extracting direct, filtered views from enterprise database servers without exporting flat files.
 
+- Note: For PostgreSQL, you must install [Npgsql-4.0.10.msi](https://github.com/npgsql/npgsql/releases/download/v4.0.10/Npgsql-4.0.10.msi) connector with GAC Installation enabled ("Entire feature will be installed on local hard drive"), and do not include a trailing semicolon (;) in your SQL statement.
+
 ### Step-by-Step Instructions:
 
 1. Go to **Data** > **Get Data** > **From Database** > select your database (e.g., **From SQL Server Database** or **From PostgreSQL Database**).
-2. Enter connection details:
+
+<img width="1061" height="803" alt="1" src="https://github.com/user-attachments/assets/112306d1-98a4-437c-823c-e1ae98d585bf" />
+
+
+3. Enter connection details:
 * **Server:** `localhost:5432` or `sql-server.company.internal`
-* **Database:** `analytics_db`
+* **Database:** `classroom`
 
 
 3. Expand **Advanced options** and input a SQL statement to filter records on the database engine prior to loading:
 
-```sql
-SELECT 
-    order_id,
-    customer_id,
-    order_date,
-    SUM(quantity * unit_price) AS total_order_value
-FROM orders
-WHERE order_date >= '2026-01-01'
-GROUP BY order_id, customer_id, order_date;
+<img width="865" height="576" alt="2" src="https://github.com/user-attachments/assets/c79b20f0-bee3-4600-b7bf-ca3acae57317" />
 
-```
 
 4. Authenticate using Windows or Database credentials.
+
+<img width="868" height="377" alt="3" src="https://github.com/user-attachments/assets/1451c965-85cc-42fa-b0c2-78def9b37fa9" />
+
+   
 5. Click **Load** to stream the dataset into an Excel Data Model or Worksheet Table.
+
+<img width="1080" height="802" alt="Screenshot 2026-09-29 123415" src="https://github.com/user-attachments/assets/33c61ff7-90f3-422d-9b95-8e3c1ec8106d" />
+
 
 ---
 
