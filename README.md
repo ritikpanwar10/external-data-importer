@@ -12,21 +12,29 @@ Used for processing transactional logs, ERP reports, or external system exports 
 ### Step-by-Step Instructions:
 1. Open Excel and navigate to the **Data** tab.
 2. Select **Get Data** > **From File** > **From Text/CSV**.
-3. Browse and select your target file (e.g., `orders_data.csv`).
-4. In the preview window:
+
+
+   <img width="955" height="656" alt="1" src="https://github.com/user-attachments/assets/b7dc15fa-eaf3-4fa4-b81f-0ffdc761007e" />
+
+4. Browse and select your target file (e.g., `orders_data.csv`).
+
+
+   <img width="930" height="583" alt="2" src="https://github.com/user-attachments/assets/46cf5ad7-c13f-43b4-abe7-7dcab04073f8" />
+
+   
+5. In the preview window:
    * **File Origin:** `65001: Unicode (UTF-8)`
    * **Delimiter:** `Comma`
    * **Data Type Detection:** `Based on first 200 rows`
-5. Click **Transform Data** to clean dates, filter records, or cast column types, or click **Load** to import directly into a table.
+6. Click **Transform Data** to clean dates, filter records, or cast column types, or click **Load** to import directly into a table.
+
+
+<img width="1082" height="812" alt="3" src="https://github.com/user-attachments/assets/61aeb343-1b49-4c6a-b893-334d5ffe5b4f" />
 
 ### Example Dataset (`orders_data.csv`):
-```csv
-Order_ID,Customer_Name,Product,Amount,Order_Date
-1001,Amit Sharma,Keyboard,45.00,2026-08-15
-1002,Sarah Jenkins,Monitor,220.50,2026-08-16
-1003,Priya Patel,Mouse,15.75,2026-08-16
 
-```
+<img width="617" height="270" alt="4" src="https://github.com/user-attachments/assets/9940403e-e900-4e71-b432-098b804ff499" />
+
 
 ### Result:
 
@@ -43,21 +51,32 @@ Used for scraping HTML tables from websites, such as live exchange rates, commod
 
 1. Go to the **Data** tab.
 2. Select **Get Data** > **From Other Sources** > **From Web**.
+
+
+<img width="837" height="863" alt="5" src="https://github.com/user-attachments/assets/f2354d7d-45e7-4766-a46c-65af82b32503" />
+ 
 3. Enter the target URL:
-```text
-[https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal))
-
-```
-
+[https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal))
 
 4. Click **OK**.
+
+
+<img width="871" height="267" alt="6" src="https://github.com/user-attachments/assets/6fc8a1b2-d715-4961-8c01-80a6563a4a6c" />
+
+  
 5. In the **Navigator** dialog:
 * Expand the URL tree.
-* Select the table from the list (e.g., `Table 1` or `By country/territory`).
+* Select the table from the list (e.g., GDP forecast or estimate (million US$) by country).
 * Verify the preview matches the web table.
 
 
+<img width="1093" height="871" alt="7" src="https://github.com/user-attachments/assets/39a39952-f497-4f74-9e91-d04d1ce63fac" />
+
 6. Click **Transform Data** to remove header rows or invalid symbols, then click **Close & Load**.
+
+
+<img width="1726" height="835" alt="8" src="https://github.com/user-attachments/assets/a3bb0968-0457-4066-bb13-1eebfdb9f15c" />
+
 
 ### Refresh Mechanism:
 
