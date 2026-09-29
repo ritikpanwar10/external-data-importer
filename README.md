@@ -1,7 +1,23 @@
+# Import Data from External Sources in Microsoft Excel
 
-# Import Data from External Sources in Excel
+A comprehensive step-by-step technical reference for connecting, importing, combining, and automating data refreshes from external sources into Microsoft Excel using Power Query and native data connectors.
 
-A step-by-step technical reference for connecting, importing, combining, and automating data refreshes from external sources into Microsoft Excel using Power Query and native functions.
+---
+
+## 📑 Table of Contents
+
+- [Overview](#overview)
+- [1. Import from Text / CSV File](#1-import-from-text--csv-file)
+- [2. Import from a Live Web Page (Web Scraping)](#2-import-from-a-live-web-page-web-scraping)
+- [3. Import from a Relational Database (SQL Server / PostgreSQL / MySQL)](#3-import-from-a-relational-database-sql-server--postgresql--mysql)
+- [4. Consolidate Multiple Files from a Folder](#4-consolidate-multiple-files-from-a-folder)
+- [Best Practices](#best-practices)
+
+---
+
+## Overview
+
+Modern Excel workflows rely heavily on Power Query (Get & Transform Data) to build reproducible, error-free pipelines. This guide provides exact instructions for bringing disparate data streams—flat files, web tables, relational databases, and multi-file directories—into structured Excel tables with automatic refresh capabilities.
 
 ---
 
@@ -158,3 +174,7 @@ Used for combining identical periodic files (e.g., `Jan_Sales.xlsx`, `Feb_Sales.
 * Adding `Apr_Sales.xlsx` to the folder requires zero manual copy-pasting.
 * Clicking **Data** > **Refresh All** appends the new file's rows into the master table automatically.
 
+## Best Practices
+- **Explicit Data Types:** Always verify column data types in Power Query before loading into Excel to prevent number-as-text errors.
+- **Relative File Paths:** When sharing workbooks referencing local directories or CSVs, place source files in OneDrive/SharePoint or use parameter tables for directory paths.
+- **Refresh Scheduling:** Configure background refresh and refresh intervals under **Data** > **Queries & Connections** > right-click query > **Properties**.
